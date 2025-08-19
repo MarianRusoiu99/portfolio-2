@@ -5,6 +5,9 @@ on:
     branches:
       - main # The branch name your are commit the new changes
 
+permissions:
+  contents: write   # 👈 important: allows pushing back to repo
+
 jobs:
   build:
     runs-on: ubuntu-latest
