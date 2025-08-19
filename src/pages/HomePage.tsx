@@ -132,12 +132,12 @@ function HomePage() {
   ];
 
   const projects = [
-    { id: "ai-storybook-app", title: "AI Storybook App", description: "AI-powered children's story generation with voice narration and custom illustrations", tech: ["React", "GPT-4", "DALL·E", "PlayHT"], status: "Live", type: "AI Product" },
-    { id: "ai-support-evaluator", title: "AI Support Evaluator", description: "Conversation analytics platform for customer support quality assessment", tech: ["Django", "React", "AI Analytics"], status: "Live", type: "Enterprise Tool" },
-    { id: "doctor-assist", title: "Doctor Assist", description: "Medical transcription app with voice-to-text and PDF export capabilities", tech: ["React Native", "Whisper API", "PDF Generation"], status: "Live", type: "Healthcare" },
-    { id: "corporate-website", title: "Corporate Website", description: "High-performance business website with headless CMS integration", tech: ["Next.js", "Strapi", "SEO Optimization"], status: "Live", type: "Full Stack" },
-    { id: "photobooth-platform", title: "Photobooth Platform", description: "Complete booking and management system for event photography business", tech: ["WordPress", "Custom Plugins", "Cloudflare CDN"], status: "Live", type: "Business Platform" },
-    { id: "self-hosted-infrastructure", title: "Self-Hosted Infrastructure", description: "Dockerized infrastructure with CI/CD pipelines and comprehensive monitoring", tech: ["Docker", "GitHub Actions", "Grafana", "Prometheus"], status: "Live", type: "DevOps" }
+    { id: "outsnapped-platform", title: "OutSnapped Photo Booth Platform", description: "Nationwide photo booth booking and management system serving major corporate clients", tech: ["WordPress", "JavaScript", "Cloudflare", "Oxygen Builder"], status: "Live", type: "WordPress Development" },
+    { id: "ai-storybook-app", title: "AI Storybook App", description: "AI-powered children's story generation with personalized narratives, images, and audio", tech: ["React", "Nest.js", "OpenAI API", "DALL·E", "PlayHT"], status: "Live", type: "AI Product" },
+    { id: "ai-support-evaluator", title: "AI Customer Support Evaluation Tool", description: "AI-powered support conversation analysis platform for performance assessment", tech: ["Django", "React", "Docker", "PostgreSQL", "GitHub Actions"], status: "Live", type: "Enterprise AI Tool" },
+    { id: "doctor-assist-app", title: "Doctor Assist App", description: "Medical consultation transcription mobile app with HIPAA compliance", tech: ["React Native", "FastAPI", "Whisper API", "AWS S3"], status: "Live", type: "Healthcare Mobile App" },
+    { id: "peerconcept-website", title: "Peerconcept Corporate Site", description: "Modern corporate website with headless CMS and containerized deployment", tech: ["Next.js", "Strapi CMS", "Tailwind CSS", "Docker"], status: "Live", type: "Full Stack Development" },
+    { id: "self-hosted-infrastructure", title: "Self-Hosted Business Infrastructure", description: "Complete DevOps infrastructure with monitoring, CI/CD, and automated deployments", tech: ["Docker", "GitHub Actions", "Grafana", "Prometheus", "Traefik"], status: "Live", type: "DevOps & Infrastructure" }
   ];
 
   return (
