@@ -8,31 +8,31 @@ import InteractiveText from './InteractiveText';
 
 const projectsData = {
   'outsnapped-platform': {
-    title: 'OutSnapped Photo Booth Platform',
-    subtitle: 'Nationwide photo booth booking and management system',
+    title: 'WordPress Development & IT Support — OutSnapped, LLC',
+    subtitle: 'Nationwide photo booth company\'s WordPress marketing and booking platform',
     category: 'WordPress Development',
     status: 'Live',
-    timeline: '1.5 years',
-    team: '3 developers',
-    tech: ['WordPress', 'JavaScript', 'Cloudflare', 'Oxygen Builder', 'WooCommerce'],
-    description: 'Developed and maintained a nationwide photo booth company\'s WordPress marketing and booking platform, serving major corporate clients including GitHub, Cisco, CVS, and Accenture.',
-    challenge: 'Optimizing a complex booking platform for nationwide operations while ensuring fast load times and handling high traffic from major corporate events.',
-    solution: 'Implemented Cloudflare CDN and advanced caching strategies, rebuilt core functionality with Oxygen Site Builder, and achieved perfect Lighthouse audit scores.',
+    timeline: '2+ years',
+    team: 'Solo developer',
+    tech: ['WordPress', 'JavaScript', 'Cloudflare'],
+    description: 'Worked on developing and maintaining a nationwide photo booth company\'s WordPress marketing and booking platform.',
+    challenge: 'Improving SEO, responsiveness, and performance for a high-traffic platform serving nationwide operations.',
+    solution: 'Improved SEO, responsiveness, and performance using Oxygen Site Builder, achieving Lighthouse audit success. Implemented Cloudflare CDN and caching, cutting load times and bounce rates by ~40%.',
     features: [
-      'Online booking and scheduling system',
-      'Equipment inventory management',
-      'Automated photo delivery system',
-      'Corporate client management',
-      'Event asset management workflows',
-      'SEO-optimized marketing pages',
-      'Responsive design across all devices',
-      'Performance monitoring and analytics'
+      'WordPress marketing and booking platform',
+      'SEO optimization with Oxygen Site Builder',
+      'Lighthouse audit compliance',
+      'Cloudflare CDN implementation',
+      'Performance caching solutions',
+      'Data entry and QA workflows',
+      'Event asset management',
+      'Client support for major corporations'
     ],
     impact: [
       '~40% reduction in load times and bounce rates',
-      'Perfect Lighthouse performance scores',
-      'Successful deployment for Fortune 500 events',
-      'Streamlined workflows for nationwide operations'
+      'Lighthouse audit success achieved',
+      'Served clients like GitHub, Cisco, CVS, and Accenture',
+      'Improved SEO and site responsiveness'
     ],
     images: [
       'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=500&fit=crop',
@@ -41,31 +41,31 @@ const projectsData = {
     ]
   },
   'peerconcept-website': {
-    title: 'Peerconcept Corporate Site',
-    subtitle: 'Modern corporate website with headless CMS',
+    title: 'Full-Stack Web Development — Peerconcept.com',
+    subtitle: 'Modern corporate site with SSR Next.js for SEO',
     category: 'Full Stack Development',
     status: 'Live',
-    timeline: '4 months',
-    team: '3 developers',
+    timeline: '3 months',
+    team: 'Team collaboration',
     tech: ['Next.js', 'Strapi CMS', 'Tailwind CSS', 'Docker', 'Nginx'],
-    description: 'Built a modern corporate website using Next.js with server-side rendering for optimal SEO performance and integrated Strapi CMS for seamless content management.',
-    challenge: 'Creating a high-performance corporate site with excellent SEO while providing non-technical stakeholders with easy content management capabilities.',
-    solution: 'Implemented SSR with Next.js for SEO optimization, integrated Strapi headless CMS for content management, and containerized the entire stack with Docker for reliable deployment.',
+    description: 'Contributed to building a modern corporate site with SSR Next.js for SEO and integrated Strapi CMS for content management.',
+    challenge: 'Building a modern corporate website with excellent SEO performance and seamless content management.',
+    solution: 'Managed containerization and deployment via Docker while implementing SSR with Next.js for optimal SEO performance.',
     features: [
       'Server-side rendering with Next.js',
-      'Headless CMS integration with Strapi',
+      'Integrated Strapi CMS for content management',
       'SEO-optimized architecture',
       'Responsive design with Tailwind CSS',
-      'Containerized deployment with Docker',
-      'Nginx reverse proxy configuration',
-      'Content management workflows',
-      'Performance optimization'
+      'Docker containerization',
+      'Nginx deployment configuration',
+      'Modern corporate design',
+      'Content management workflows'
     ],
     impact: [
-      'Significant SEO performance improvements',
-      'Streamlined content management process',
-      'Fast loading times across all pages',
-      'Scalable containerized infrastructure'
+      'Improved SEO performance with SSR',
+      'Streamlined content management',
+      'Successful Docker deployment',
+      'Modern, responsive corporate presence'
     ],
     images: [
       'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
@@ -75,30 +75,30 @@ const projectsData = {
   },
   'ai-storybook-app': {
     title: 'AI Storybook App',
-    subtitle: 'AI-powered children\'s story generation platform',
+    subtitle: 'AI-driven children\'s storybook app with personalized content',
     category: 'AI Product Development',
     status: 'Live',
-    timeline: '8 months',
-    team: '4 developers',
+    timeline: '6 months',
+    team: 'Frontend lead',
     tech: ['React', 'Nest.js', 'OpenAI API', 'DALL·E', 'PlayHT', 'Azure Storage', 'Docker', 'Stripe'],
-    description: 'Led frontend development of an AI-driven children\'s storybook application that generates personalized narratives, images, and audio content with synchronized multimedia playback.',
-    challenge: 'Creating an engaging, safe platform for children while integrating multiple AI services and ensuring content appropriateness across different AI models.',
-    solution: 'Developed interactive personalization features, implemented synchronized multimedia playback, and integrated Stripe for subscription management while ensuring child safety.',
+    description: 'Led frontend development of an AI-driven children\'s storybook app generating personalized narratives, images, and audio.',
+    challenge: 'Creating an engaging AI-powered platform for children with personalized content generation and multimedia synchronization.',
+    solution: 'Built interactive personalization features and synchronized multimedia playback. Managed deployment pipelines and integrated Stripe for subscriptions. Collaborated on API design and performance optimization.',
     features: [
-      'AI-generated personalized stories',
-      'Custom DALL·E illustrations',
+      'AI-generated personalized narratives',
+      'Custom DALL·E image generation',
       'Audio narration with PlayHT',
-      'Interactive personalization interface',
+      'Interactive personalization features',
       'Synchronized multimedia playback',
       'Stripe subscription integration',
-      'Content safety and moderation',
-      'Cloud storage with Azure'
+      'Azure Storage for content',
+      'Docker deployment pipelines'
     ],
     impact: [
-      'Successful product launch with AI integration',
-      'Seamless subscription payment system',
-      'Safe and engaging user experience',
-      'Scalable cloud infrastructure deployment'
+      'Successful AI-powered product launch',
+      'Seamless multimedia synchronization',
+      'Integrated subscription payment system',
+      'Optimized performance and API design'
     ],
     images: [
       'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=500&fit=crop',
@@ -108,30 +108,30 @@ const projectsData = {
   },
   'ai-support-evaluator': {
     title: 'AI Customer Support Evaluation Tool',
-    subtitle: 'AI-powered support conversation analysis platform',
+    subtitle: 'AI-powered tool analyzing support conversations',
     category: 'Enterprise AI Tool',
     status: 'Live',
-    timeline: '6 months',
-    team: '5 developers',
-    tech: ['Django', 'React', 'Docker', 'PostgreSQL', 'GitHub Actions', 'AWS EC2', 'Portainer'],
-    description: 'Developed frontend and backend features for an AI-powered tool that analyzes customer support conversations to assess agent performance and ethical compliance.',
-    challenge: 'Building a comprehensive analysis system that could accurately evaluate support conversations while maintaining data privacy and providing actionable insights.',
-    solution: 'Implemented robust CI/CD pipelines with GitHub Actions and deployed on AWS EC2 using Portainer for container management, ensuring scalable and reliable operations.',
+    timeline: '4 months',
+    team: 'Full-stack developer',
+    tech: ['Django', 'React', 'Docker', 'PostgreSQL'],
+    description: 'Worked on frontend and backend features for an AI-powered tool analyzing support conversations to assess agent performance and ethics.',
+    challenge: 'Building a comprehensive AI analysis system for evaluating support conversations and agent performance.',
+    solution: 'Set up CI/CD pipelines with GitHub Actions and deployed on AWS EC2 with Portainer for reliable container management.',
     features: [
       'AI-powered conversation analysis',
-      'Agent performance evaluation',
-      'Ethics compliance monitoring',
-      'Real-time dashboard interface',
-      'Automated CI/CD with GitHub Actions',
-      'AWS EC2 deployment with Portainer',
-      'PostgreSQL data management',
-      'Docker containerization'
+      'Agent performance assessment',
+      'Ethics evaluation capabilities',
+      'Frontend and backend development',
+      'CI/CD with GitHub Actions',
+      'AWS EC2 deployment',
+      'Portainer container management',
+      'PostgreSQL data management'
     ],
     impact: [
-      'Streamlined support quality assessment',
-      'Automated performance evaluation',
+      'Automated support quality assessment',
       'Reliable cloud deployment infrastructure',
-      'Improved support team efficiency'
+      'Streamlined CI/CD workflows',
+      'Enhanced agent performance insights'
     ],
     images: [
       'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=500&fit=crop',
@@ -141,30 +141,30 @@ const projectsData = {
   },
   'doctor-assist-app': {
     title: 'Doctor Assist App',
-    subtitle: 'Medical consultation transcription mobile app',
+    subtitle: 'React Native app for automated medical form-filling',
     category: 'Healthcare Mobile App',
     status: 'Live',
-    timeline: '5 months',
-    team: '2 developers',
+    timeline: '4 months',
+    team: 'Solo developer',
     tech: ['React Native', 'FastAPI', 'Whisper API', 'AWS S3', 'Amazon Cognito'],
-    description: 'Developed a React Native application for automated medical form-filling by transcribing doctor-patient consultations using OpenAI\'s Whisper API.',
-    challenge: 'Creating a HIPAA-compliant solution with high accuracy for medical terminology while ensuring offline functionality and data security.',
-    solution: 'Implemented offline-first functionality with secure cloud sync, integrated Whisper API for accurate medical transcription, and ensured compliance with healthcare data regulations.',
+    description: 'Developed a React Native app for automated medical form-filling by transcribing consultations with Whisper API.',
+    challenge: 'Creating a secure, compliant mobile app for medical transcription with offline functionality.',
+    solution: 'Ensured offline-first functionality, data security, and compliance. Integrated user authentication and cloud storage for reliable medical data handling.',
     features: [
-      'Real-time consultation transcription',
-      'Automated medical form filling',
+      'Automated medical form-filling',
+      'Consultation transcription with Whisper API',
       'Offline-first functionality',
-      'HIPAA-compliant data handling',
-      'AWS S3 secure cloud storage',
-      'Amazon Cognito authentication',
-      'Medical terminology optimization',
-      'Cross-platform mobile support'
+      'Data security and compliance',
+      'User authentication with Amazon Cognito',
+      'Cloud storage with AWS S3',
+      'Cross-platform mobile support',
+      'Medical data handling protocols'
     ],
     impact: [
-      'Significant time savings for healthcare providers',
-      'Improved documentation accuracy',
-      'HIPAA compliance achievement',
-      'Enhanced patient care efficiency'
+      'Streamlined medical documentation process',
+      'Ensured HIPAA compliance',
+      'Reliable offline functionality',
+      'Secure cloud integration'
     ],
     images: [
       'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=500&fit=crop',
@@ -174,30 +174,30 @@ const projectsData = {
   },
   'self-hosted-infrastructure': {
     title: 'Self-Hosted Business Infrastructure',
-    subtitle: 'Complete DevOps infrastructure with monitoring and CI/CD',
+    subtitle: 'In-house infrastructure for operations, CI/CD, monitoring, and documentation',
     category: 'DevOps & Infrastructure',
     status: 'Live',
     timeline: '8 months',
-    team: '2 developers',
+    team: 'Infrastructure architect',
     tech: ['Docker', 'Portainer', 'Traefik', 'GitHub Actions', 'Grafana', 'Prometheus', 'Loki', 'Gitea', 'Wiki.js'],
-    description: 'Designed and deployed comprehensive in-house infrastructure for business operations, including CI/CD pipelines, monitoring, documentation, and automated deployments.',
-    challenge: 'Building enterprise-level infrastructure that could compete with cloud providers while maintaining cost efficiency, security, and reliability.',
-    solution: 'Implemented observability with Grafana/Prometheus/Loki stack, automated containerized deployments with Portainer and GitHub Actions, including comprehensive Playwright UI testing.',
+    description: 'Designed and deployed in-house infrastructure for operations, CI/CD, monitoring, and documentation.',
+    challenge: 'Building comprehensive enterprise-level infrastructure for complete business operations management.',
+    solution: 'Implemented observability with Grafana/Prometheus/Loki and automated containerized deployments with Portainer and GitHub Actions, including Playwright UI testing.',
     features: [
       'Complete Docker containerization',
-      'Automated CI/CD with GitHub Actions',
-      'Comprehensive monitoring with Grafana/Prometheus/Loki',
-      'Load balancing and routing with Traefik',
-      'Self-hosted Git with Gitea',
-      'Documentation platform with Wiki.js',
-      'Automated Playwright UI testing',
-      'Infrastructure as Code'
+      'Portainer for container management',
+      'Traefik for load balancing and routing',
+      'GitHub Actions CI/CD automation',
+      'Grafana/Prometheus/Loki observability stack',
+      'Gitea for self-hosted Git',
+      'Wiki.js for documentation',
+      'Playwright UI testing automation'
     ],
     impact: [
-      'Cost-effective alternative to cloud providers',
-      'Enterprise-level reliability and monitoring',
-      'Automated deployment and testing workflows',
-      'Complete operational infrastructure solution'
+      'Complete operational infrastructure solution',
+      'Automated deployment and monitoring',
+      'Cost-effective self-hosted alternative',
+      'Enterprise-level reliability and observability'
     ],
     images: [
       'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=500&fit=crop',

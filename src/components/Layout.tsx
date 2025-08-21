@@ -29,7 +29,6 @@ const Layout: React.FC<LayoutProps> = ({ children, showBackButton = false }) => 
         ref={navRef}
         className="fixed top-0 left-0 right-0 z-50 p-6 md:p-8"
         style={{
-          background: `linear-gradient(to bottom, ${theme.colors.background} 60%, transparent)`,
           backdropFilter: 'blur(16px)',
           WebkitBackdropFilter: 'blur(16px)',
         }}
@@ -67,14 +66,6 @@ const Layout: React.FC<LayoutProps> = ({ children, showBackButton = false }) => 
               <Mail size={16} />
               <span>Contact</span>
             </motion.a>
-            <motion.button 
-              className="text-sm transition-colors flex items-center gap-2 no-spawn"
-              style={{ color: theme.colors.textSecondary }}
-              whileHover={{ x: 5 }}
-            >
-              <Download size={16} />
-              <span>CV</span>
-            </motion.button>
           </div>
         </div>
       </motion.nav>

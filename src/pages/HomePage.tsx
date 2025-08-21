@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
-import { ArrowUpRight, Download, Mail, Briefcase } from 'lucide-react';
+import { ArrowUpRight, Download, Mail } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import InteractiveText, { InteractiveTextRef } from '../components/InteractiveText';
 import ImageSpawner, { SpawnedImage } from '../components/ImageSpawner';
@@ -44,14 +44,14 @@ function HomePage() {
   useEffect(() => {
     gsap.registerPlugin();
     
-    gsap.utils.toArray('.parallax').forEach((element: any) => {
-      gsap.fromTo(element, 
+    gsap.utils.toArray('.parallax').forEach((element: unknown) => {
+      gsap.fromTo(element as Element, 
         { y: 0 }, 
         {
           y: -100,
           ease: "none",
           scrollTrigger: {
-            trigger: element,
+            trigger: element as Element,
             start: "top bottom",
             end: "bottom top",
             scrub: true
@@ -111,33 +111,18 @@ function HomePage() {
 
   const skills = [
     { category: "Frontend Development", technologies: ["React", "Next.js", "TypeScript", "React Native", "Tailwind CSS"], experience: "5+ years" },
-    { category: "Backend & APIs", technologies: ["Node.js", "Django", "FastAPI", "Strapi", "WordPress"], experience: "4+ years" },
-    { category: "DevOps & Infrastructure", technologies: ["Docker", "GitHub Actions", "Nginx", "Traefik", "Portainer"], experience: "3+ years" },
-    { category: "AI & Automation", technologies: ["GPT-4 API", "DALL·E", "Whisper API", "PlayHT", "Automation"], experience: "2+ years" }
-  ];
-
-  const workExperience = [
-    {
-      company: "OutSnapped, LLC",
-      role: "WordPress Development & IT Support",
-      duration: "2022 - Present",
-      technologies: ["WordPress", "JavaScript", "Cloudflare", "Oxygen Builder"],
-      description: [
-        "Developed, maintained, and optimized a nationwide photo booth company's WordPress-based marketing and booking platform.",
-        "Modernized site components using WordPress Oxygen Site Builder, focusing on SEO, responsiveness, and performance—achieving passing Lighthouse audits on most pages.",
-        "Implemented Cloudflare CDN and caching, significantly improving load times and reducing bounce rate by approximately 40%.",
-        "Managed data entry, QA, and on-premise asset modifications for events with high-profile clients including GitHub, Cisco, CVS, and Accenture."
-      ]
-    }
+    { category: "Backend & APIs", technologies: ["Node.js", "Django", "FastAPI", "Strapi", "WordPress"], experience: "3+ years" },
+    { category: "DevOps & Infrastructure", technologies: ["Docker", "GitHub Actions", "Nginx", "Traefik", "Portainer"], experience: "2+ years" },
+    { category: "AI & Automation", technologies: ["GPT-4 API", "DALL·E", "Whisper API", "PlayHT", "Automation"], experience: "1+ years" }
   ];
 
   const projects = [
-    { id: "outsnapped-platform", title: "OutSnapped Photo Booth Platform", description: "Nationwide photo booth booking and management system serving major corporate clients", tech: ["WordPress", "JavaScript", "Cloudflare", "Oxygen Builder"], status: "Live", type: "WordPress Development" },
-    { id: "ai-storybook-app", title: "AI Storybook App", description: "AI-powered children's story generation with personalized narratives, images, and audio", tech: ["React", "Nest.js", "OpenAI API", "DALL·E", "PlayHT"], status: "Live", type: "AI Product" },
-    { id: "ai-support-evaluator", title: "AI Customer Support Evaluation Tool", description: "AI-powered support conversation analysis platform for performance assessment", tech: ["Django", "React", "Docker", "PostgreSQL", "GitHub Actions"], status: "Live", type: "Enterprise AI Tool" },
-    { id: "doctor-assist-app", title: "Doctor Assist App", description: "Medical consultation transcription mobile app with HIPAA compliance", tech: ["React Native", "FastAPI", "Whisper API", "AWS S3"], status: "Live", type: "Healthcare Mobile App" },
-    { id: "peerconcept-website", title: "Peerconcept Corporate Site", description: "Modern corporate website with headless CMS and containerized deployment", tech: ["Next.js", "Strapi CMS", "Tailwind CSS", "Docker"], status: "Live", type: "Full Stack Development" },
-    { id: "self-hosted-infrastructure", title: "Self-Hosted Business Infrastructure", description: "Complete DevOps infrastructure with monitoring, CI/CD, and automated deployments", tech: ["Docker", "GitHub Actions", "Grafana", "Prometheus", "Traefik"], status: "Live", type: "DevOps & Infrastructure" }
+    { id: "outsnapped-platform", title: "WordPress Development & IT Support — OutSnapped, LLC", description: "Developed and maintained a nationwide photo booth company's WordPress platform with ~40% performance improvements", tech: ["WordPress", "JavaScript", "Cloudflare"], status: "Live", type: "WordPress Development" },
+    { id: "ai-storybook-app", title: "AI Storybook App", description: "Led frontend development of AI-driven children's storybook app with personalized narratives, images, and audio", tech: ["React", "Nest.js", "OpenAI API", "DALL·E", "PlayHT"], status: "Live", type: "AI Product" },
+    { id: "ai-support-evaluator", title: "AI Customer Support Evaluation Tool", description: "Worked on frontend and backend features for AI-powered support conversation analysis", tech: ["Django", "React", "Docker", "PostgreSQL"], type: "Enterprise AI Tool" },
+    { id: "doctor-assist-app", title: "Doctor Assist App", description: "Developed React Native app for automated medical form-filling with Whisper API transcription", tech: ["React Native", "FastAPI", "Whisper API", "AWS S3"], type: "Healthcare Mobile App" },
+    { id: "peerconcept-website", title: "Full-Stack Web Development — Peerconcept.com", description: "Contributed to building modern corporate site with SSR Next.js and Strapi CMS integration", tech: ["Next.js", "Strapi CMS", "Tailwind CSS", "Docker"], status: "Live", type: "Full Stack Development" },
+    { id: "self-hosted-infrastructure", title: "Self-Hosted Business Infrastructure", description: "Designed and deployed in-house infrastructure with observability, CI/CD, and automated deployments", tech: ["Docker", "GitHub Actions", "Grafana", "Prometheus", "Traefik", "Outline", "Docker Registry"], type: "DevOps & Infrastructure" }
   ];
 
   return (
@@ -193,7 +178,7 @@ function HomePage() {
               </motion.div>
               <motion.div className="absolute bottom-8 left-1/2 transform -translate-x-1/2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1, duration: 0.6 }}>
                 <div className="w-px h-20 relative" style={{ backgroundColor: theme.colors.border }}>
-                  <motion.div className="w-px h-4 absolute top-0" style={{ backgroundColor: theme.colors.text }} animate={{ y: [0, 40, 0] }} transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }} />
+                  <motion.div className="w-px h-4 absolute top-0" style={{ backgroundColor: theme.colors.text }} animate={{ y: [0, 60, 0] }} transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }} />
                 </div>
               </motion.div>
             </section>
@@ -253,35 +238,6 @@ function HomePage() {
               </div>
             </section>
 
-            {/* Work Experience Section */}
-            <section className="py-32 px-6 md:px-8">
-              <div className="max-w-7xl mx-auto">
-                <motion.h2 className="text-4xl md:text-6xl font-bold mb-16 text-center" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
-                  <InteractiveText text="Work Experience" ref={(el) => { interactiveTextRefs.current[13] = el; }} />
-                </motion.h2>
-                <div className="max-w-4xl mx-auto space-y-12">
-                  {workExperience.map((job, index) => (
-                    <motion.div key={index} className="p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow" style={{ backgroundColor: theme.colors.surface, border: `1px solid ${theme.colors.border}` }} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: index * 0.1 }} viewport={{ once: true }} whileHover={{ y: -5 }}>
-                      <div className="flex flex-col sm:flex-row justify-between items-start mb-4">
-                        <div>
-                          <h3 className="text-2xl font-bold" style={{ color: theme.colors.text }}>{job.role}</h3>
-                          <p className="text-lg font-medium mb-2" style={{ color: theme.colors.textSecondary }}>{job.company}</p>
-                        </div>
-                        <span className="text-sm mt-1 sm:mt-0 flex-shrink-0" style={{ color: theme.colors.textSecondary }}>{job.duration}</span>
-                      </div>
-                      <ul className="space-y-3 mb-6 list-disc list-inside text-base" style={{ color: theme.colors.textSecondary }}>
-                        {job.description.map((point, i) => ( <li key={i}>{point}</li> ))}
-                      </ul>
-                      <div className="flex flex-wrap gap-2">
-                        {job.technologies.map((tech, techIndex) => (
-                          <span key={techIndex} className="px-3 py-1 text-sm rounded-md" style={{ border: `1px solid ${theme.colors.border}`, color: theme.colors.textSecondary }}>{tech}</span>
-                        ))}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </section>
 
             {/* Projects Section */}
             <section className="py-32 px-6 md:px-8" style={{ backgroundColor: theme.colors.surface }}>
@@ -302,7 +258,11 @@ function HomePage() {
                           <div className="flex items-center gap-4 mb-3">
                             <h3 className="text-2xl font-bold group-hover:opacity-70 transition-opacity" style={{ color: theme.colors.text }}>{project.title}</h3>
                             <span className="text-xs px-3 py-1 rounded-full" style={{ backgroundColor: theme.colors.surface, color: theme.colors.textSecondary }}>{project.type}</span>
-                            <span className="text-xs px-3 py-1 rounded-full" style={{ backgroundColor: theme.colors.success + '20', color: theme.colors.success }}>{project.status}</span>
+                            {project.status && (
+                              <span className="text-xs px-3 py-1 rounded-full" style={{ backgroundColor: theme.colors.success + '20', color: theme.colors.success }}>
+                                {project.status}
+                              </span>
+                            )}
                           </div>
                           <p className="mb-4 max-w-2xl" style={{ color: theme.colors.textSecondary }}>{project.description}</p>
                           <div className="flex flex-wrap gap-2">
