@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { useParams, Navigate } from 'react-router-dom';
 import { ExternalLink, Github, Calendar, Users, Zap } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
-import Layout from './Layout';
-import InteractiveText from './InteractiveText';
+import Layout from '../components/Layout';
+import InteractiveText from '../components/InteractiveText';
 
 const projectsData = {
   'outsnapped-platform': {
