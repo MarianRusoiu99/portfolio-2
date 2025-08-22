@@ -1,24 +1,23 @@
 import { useEffect } from 'react';
-import { gsap } from 'gsap';
 
 export const useParallaxAnimations = () => {
   useEffect(() => {
-    gsap.registerPlugin();
+    // Simple scroll-based animations without GSAP
+    const handleScroll = () => {
+      const parallaxElements = document.querySelectorAll('.parallax');
+      const scrolled = window.pageYOffset;
+      
+      parallaxElements.forEach((element) => {
+        const rate = scrolled * -0.5;
+        (element as HTMLElement).style.transform = `translateY(${rate}px)`;
+      });
+    };
+
+    // Use passive event listener for better performance
+    document.addEventListener('scroll', handleScroll, { passive: true });
     
-    gsap.utils.toArray('.parallax').forEach((element: unknown) => {
-      gsap.fromTo(element as Element, 
-        { y: 0 }, 
-        {
-          y: -100,
-          ease: "none",
-          scrollTrigger: {
-            trigger: element as Element,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true
-          }
-        }
-      );
-    });
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 };

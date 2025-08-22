@@ -6,9 +6,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  cursor: none !important;
-}
 
 :root {
   /* Light theme variables */
@@ -66,7 +63,6 @@
 body {
   font-family: var(--font-primary);
   overflow-x: hidden;
-  cursor: none !important;
   background-color: var(--color-background);
   color: var(--color-text);
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
@@ -85,7 +81,6 @@ body {
 .spawned-image {
   box-shadow: var(--shadow-lg);
   transition: all 0.5s ease;
-  cursor: none !important;
   border-radius: var(--border-radius-lg);
   filter: brightness(0.95) contrast(1.05) saturate(1.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -103,9 +98,6 @@ body {
   pointer-events: auto;
 }
 
-button, a, input, textarea, select {
-  cursor: none !important;
-}
 
 /* Smooth scrolling */
 html {
