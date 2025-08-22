@@ -284,7 +284,7 @@ const ProjectPage: React.FC = () => {
             </motion.div>
 
             {/* Project Images */}
-            {project.images && (
+            {/* {project.images && (
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -303,7 +303,7 @@ const ProjectPage: React.FC = () => {
                   />
                 ))}
               </motion.div>
-            )}
+            )} */}
           </div>
         </section>
 
