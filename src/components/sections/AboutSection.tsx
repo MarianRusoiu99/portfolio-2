@@ -18,12 +18,12 @@ const AboutSection: React.FC<AboutSectionProps> = ({ interactiveTextRefs }) => {
         <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
           <div>
             <motion.h2 className="text-4xl md:text-6xl font-bold mb-8" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
-              <InteractiveText text="About" ref={(el) => { interactiveTextRefs.current[5] = el; }} />
+              <InteractiveText text="About" textType="heading" mode="character" ref={(el) => { interactiveTextRefs.current[5] = el; }} />
             </motion.h2>
           </div>
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} viewport={{ once: true }}>
             <p className="text-lg md:text-xl leading-relaxed mb-8" style={{ color: theme.colors.textSecondary }}>
-              <InteractiveText text="I'm Valentin Rusoiu, a creative developer focused on building reliable, high-performance web apps. My experience spans WordPress, Next.js, React Native, and AI-driven tools. I also design self-hosted infrastructure with Docker, GitHub Actions, and monitoring stacks to keep projects scalable and resilient." ref={(el) => { interactiveTextRefs.current[6] = el; }} />
+              <InteractiveText text="I'm Valentin Rusoiu, a creative developer focused on building reliable, high-performance web apps. My experience spans WordPress, Next.js, React Native, and AI-driven tools. I also design self-hosted infrastructure with Docker, GitHub Actions, and monitoring stacks to keep projects scalable and resilient." textType="paragraph" mode="word" ref={(el) => { interactiveTextRefs.current[6] = el; }} />
             </p>
             <div className="flex flex-wrap gap-3 mb-8">
               {personalTraits.map((trait, index) => (

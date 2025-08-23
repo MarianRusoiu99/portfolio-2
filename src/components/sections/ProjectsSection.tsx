@@ -18,10 +18,10 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ interactiveTextRefs }
       <div className="max-w-7xl mx-auto">
         <motion.div className="text-center mb-20" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <InteractiveText text="Selected Projects" ref={(el) => { interactiveTextRefs.current[8] = el; }} />
+            <InteractiveText text="Selected Projects" textType="heading" mode="character" ref={(el) => { interactiveTextRefs.current[8] = el; }} />
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: theme.colors.textSecondary }}>
-            <InteractiveText text="A collection of recent work spanning AI applications, enterprise tools, and infrastructure solutions." ref={(el) => { interactiveTextRefs.current[9] = el; }} />
+            <InteractiveText text="A collection of recent work spanning AI applications, enterprise tools, and infrastructure solutions." textType="paragraph" mode="word" ref={(el) => { interactiveTextRefs.current[9] = el; }} />
           </p>
         </motion.div>
         <div className="space-y-8">

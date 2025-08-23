@@ -22,6 +22,8 @@ const ImageSpawner: React.FC<ImageSpawnerProps> = ({ images }) => {
         <motion.img
           key={image.id}
           src={image.src}
+          loading="lazy"
+          decoding="async"
           className="spawned-image pointer-events-none"
           style={{
             position: 'absolute',

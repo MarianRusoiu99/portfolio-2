@@ -15,7 +15,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ interactiveTextRefs }) =>
     <section className="py-32 px-6 md:px-8" style={{ backgroundColor: theme.colors.surface }}>
       <div className="max-w-7xl mx-auto">
         <motion.h2 className="text-4xl md:text-6xl font-bold mb-16 text-center" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
-          <InteractiveText text="Expertise" ref={(el) => { interactiveTextRefs.current[7] = el; }} />
+          <InteractiveText text="Expertise" textType="heading" mode="character" ref={(el) => { interactiveTextRefs.current[7] = el; }} />
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {skills.map((skill, index) => (
