@@ -26,10 +26,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({ interactiveTextRefs }) 
             <Mail size={20} />
             <span>contact@valentinrusoiu.dev</span>
           </motion.a>
-          <motion.button className="px-8 py-4 rounded-full font-medium transition-colors flex items-center gap-3 no-spawn" style={{ border: `2px solid ${isDark ? theme.colors.border : '#ffffff'}`, color: isDark ? theme.colors.text : '#ffffff' }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Download size={20} />
-            <span>Download CV</span>
-          </motion.button>
         </motion.div>
       </div>
     </section>

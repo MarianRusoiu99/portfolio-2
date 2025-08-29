@@ -18,13 +18,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ y, interactiveTextRefs }) => 
         style={{ y }}
       >
         <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="mb-8">
-          <h1 className="text-7xl md:text-9xl lg:text-[12rem] font-bold leading-none tracking-tight">
+          <h1 className="text-6xl md:text-9xl lg:text-[12rem] font-bold leading-none tracking-tight">
             <InteractiveText text="Frontend" className="block" ref={(el) => { interactiveTextRefs.current[0] = el; }} />
             <InteractiveText text="Developer" className="block" ref={(el) => { interactiveTextRefs.current[1] = el; }} />
           </h1>
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className="mb-12">
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed" style={{ color: theme.colors.textSecondary }}>
+          <p className="text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed " style={{ color: theme.colors.textSecondary }}>
             <InteractiveText text="I build fast, modern, and expressive digital products" className="block" ref={(el) => { interactiveTextRefs.current[2] = el; }} />
             <InteractiveText text="— from websites and apps to AI-powered tools" className="block" ref={(el) => { interactiveTextRefs.current[3] = el; }} />
             <InteractiveText text="and self-hosted infrastructure." className="block" ref={(el) => { interactiveTextRefs.current[4] = el; }} />

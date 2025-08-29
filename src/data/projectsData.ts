@@ -129,7 +129,6 @@ export const projectsData: Record<string, ProjectData> = {
       'Voice narration powered by PlayHT text-to-speech',
       'Interactive story customization interface',
       'Content safety filtering and moderation',
-      'Progressive story generation and loading'
     ],
     impact: [
       {
@@ -179,10 +178,6 @@ export const projectsData: Record<string, ProjectData> = {
       {
         title: 'Quality Insights',
         description: 'Data-driven insights improving customer service quality'
-      },
-      {
-        title: 'Cost Reduction',
-        description: 'Reduced need for manual quality assurance processes'
       }
     ]
   },
@@ -208,8 +203,6 @@ export const projectsData: Record<string, ProjectData> = {
       'Automated medical form completion',
       'Cross-platform React Native application',
       'Secure cloud storage with AWS S3',
-      'HIPAA-compliant data handling',
-      'Offline capability for sensitive environments'
     ],
     impact: [
       {
