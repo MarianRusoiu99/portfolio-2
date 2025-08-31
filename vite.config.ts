@@ -19,7 +19,7 @@ export default defineConfig({
     // Reduce chunk size warnings
     chunkSizeWarningLimit: 1000,
     // Enable sourcemaps for production debugging
-    sourcemap: false,
+    sourcemap: 'hidden',
     // Minify for smaller bundle size
     minify: 'terser',
     terserOptions: {
