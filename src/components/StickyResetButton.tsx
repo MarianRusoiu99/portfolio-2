@@ -51,10 +51,14 @@ const StickyResetButton: React.FC<StickyResetButtonProps> = ({
 
       {/* Reset button */}
       <motion.div
-        className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 100 }}
+        className="bottom-8 z-50"
+        style={{
+          position: 'fixed',
+          left: '50%',
+        }}
+        initial={{ opacity: 0, y: 100, x: '-50%' }}
+        animate={{ opacity: 1, y: 0, x: '-50%' }}
+        exit={{ opacity: 0, y: 100, x: '-50%' }}
         transition={{ type: 'spring', stiffness: 400, damping: 25 }}
       >
         <motion.button
@@ -63,7 +67,6 @@ const StickyResetButton: React.FC<StickyResetButtonProps> = ({
           style={{
             backgroundColor: theme.colors.primary,
             color: theme.colors.background,
-            border: `2px solid ${theme.colors.border}`,
           }}
           whileHover={{ 
             scale: 1.05,
