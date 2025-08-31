@@ -1,34 +1,35 @@
 import { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
-import { AnimatePresence } from 'framer-motion';
-import Preloader from './components/Preloader';
-import ProjectPage from './pages/ProjectPage';
 import ScrollToTop from './components/ScrollToTop';
+import LoadingSkeleton from './components/LoadingSkeleton';
 
+// Lazy load pages for better performance
 const HomePage = lazy(() => import('./pages/HomePage'));
+const ProjectPage = lazy(() => import('./pages/ProjectPage'));
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // This ensures the preloader is shown for a minimum amount of time for a smooth experience.
+    // Reduced loading time for better UX
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Minimum 2 seconds loading screen
+    }, 800); // Reduced from 2000ms to 800ms
 
     return () => clearTimeout(timer);
   }, []);
 
+  // Early return if still loading
+  if (loading) {
+    return <LoadingSkeleton />;
+  }
+
   return (
     <ThemeProvider>
-      {/* <AnimatePresence mode="wait">
-        {loading && <Preloader />}
-      </AnimatePresence> */}
-      
       <Router>
         <ScrollToTop />
-        <Suspense fallback={null}>
+        <Suspense fallback={<LoadingSkeleton />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/project/:projectId" element={<ProjectPage />} />

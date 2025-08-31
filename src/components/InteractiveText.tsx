@@ -1,4 +1,4 @@
-import React, { useState, useImperativeHandle, forwardRef } from 'react';
+import React, { useState, useImperativeHandle, forwardRef, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
 
 interface InteractiveTextProps {
@@ -99,12 +99,15 @@ export interface InteractiveTextRef {
   reset: () => void;
 }
 
-const InteractiveText = forwardRef<InteractiveTextRef, InteractiveTextProps>(
+const InteractiveText = React.memo(forwardRef<InteractiveTextRef, InteractiveTextProps>(
   ({ text, className = '' }, ref) => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const [letterStyles, setLetterStyles] = useState<{ [key: number]: { font: string; color: string } }>({});
 
-    const handleLetterHover = (index: number) => {
+    // Memoize split text to avoid unnecessary recalculations
+    const splitText = useMemo(() => text.split(''), [text]);
+
+    const handleLetterHover = useCallback((index: number) => {
       // Always generate new random styles on hover
       const randomFont = creativeFonts[Math.floor(Math.random() * creativeFonts.length)];
       const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
@@ -115,24 +118,24 @@ const InteractiveText = forwardRef<InteractiveTextRef, InteractiveTextProps>(
       }));
       
       setHoveredIndex(index);
-    };
+    }, []);
 
-    const handleLetterLeave = () => {
+    const handleLetterLeave = useCallback(() => {
       setHoveredIndex(null);
-    };
+    }, []);
 
-    const reset = () => {
+    const reset = useCallback(() => {
       setLetterStyles({});
       setHoveredIndex(null);
-    };
+    }, []);
 
     useImperativeHandle(ref, () => ({
       reset
-    }));
+    }), [reset]);
 
     return (
       <span className={className}>
-        {text.split('').map((char, index) => (
+        {splitText.map((char, index) => (
           <motion.span
             key={index}
             className="creative-fonts inline-block no-spawn"
@@ -164,7 +167,7 @@ const InteractiveText = forwardRef<InteractiveTextRef, InteractiveTextProps>(
       </span>
     );
   }
-);
+));
 
 InteractiveText.displayName = 'InteractiveText';
 
