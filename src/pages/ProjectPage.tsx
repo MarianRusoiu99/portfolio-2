@@ -38,7 +38,7 @@ const ProjectPage: React.FC = () => {
                     href={project.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm px-4 py-2 rounded-full flex items-center gap-2 no-spawn bg-green-500 dark:bg-green-600 text-white font-semibold shadow-lg"
+                    className="text-sm px-2 rounded-full flex items-center gap-2 no-spawn bg-green-500 dark:bg-green-600 text-white font-semibold shadow-lg"
                     whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(34, 197, 94, 0.3)" }}
                     whileTap={{ scale: 0.95 }}
                   >

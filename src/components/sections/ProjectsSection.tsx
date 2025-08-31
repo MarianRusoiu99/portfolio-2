@@ -14,9 +14,9 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ interactiveTextRefs }
   const { theme } = useTheme();
 
   return (
-    <section className="py-16 md:py-24 px-6 md:px-8 " style={{ backgroundColor: theme.colors.surface }}>
+    <section className="py-8 md:py-16 lg:py-24 px-6 md:px-8 " style={{ backgroundColor: theme.colors.surface }}>
       <div className="max-w-7xl mx-auto">
-        <motion.div className="text-center mb-20" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+        <motion.div className="text-center mb-8 md:mb-12 lg:mb-20" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             <InteractiveText text="Selected Projects" ref={(el) => { interactiveTextRefs.current[8] = el; }} />
           </h2>
@@ -26,7 +26,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ interactiveTextRefs }
         </motion.div>
         <div className="space-y-6 sm:space-y-8">
           {Object.entries(projectsData).map(([projectId, project]) => (
-            <motion.div key={projectId} className="group rounded-2xl p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-500" style={{ border: `1px solid ${theme.colors.border}`, backgroundColor: theme.colors.background }} initial={{ opacity: 0}} whileInView={{ opacity: 1}} transition={{ duration: 0.3}} viewport={{ once: true }} >
+            <motion.div key={projectId} className="group rounded-2xl p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300" style={{ border: `1px solid ${theme.colors.border}`, backgroundColor: theme.colors.background }} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true }} >
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                 <div className="flex-1">
                   {/* Title on its own row for mobile */}

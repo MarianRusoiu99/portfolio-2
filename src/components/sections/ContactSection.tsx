@@ -12,7 +12,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ interactiveTextRefs }) 
   const { theme, isDark } = useTheme();
 
   return (
-    <section className="py-24 px-6 md:px-8" style={{ backgroundColor: isDark ? theme.colors.surface : '#111827', color: isDark ? theme.colors.text : '#ffffff' }}>
+    <section className="py-12 md:py-18 lg:py-24 px-6 md:px-8" style={{ backgroundColor: isDark ? theme.colors.surface : '#111827', color: isDark ? theme.colors.text : '#ffffff' }}>
       <div className="max-w-7xl mx-auto text-center">
         <motion.h2 className="text-6xl md:text-8xl font-bold mb-8" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
           <InteractiveText text="Let's Create" ref={(el) => { interactiveTextRefs.current[10] = el; }} />
