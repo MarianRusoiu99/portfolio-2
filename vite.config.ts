@@ -19,15 +19,9 @@ export default defineConfig({
     // Reduce chunk size warnings
     chunkSizeWarningLimit: 1000,
     // Enable sourcemaps for production debugging
-    sourcemap: 'hidden',
-    // Minify for smaller bundle size
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true
-      }
-    }
+    sourcemap: false,
+    // Use esbuild for faster minification (default in Vite)
+    minify: 'esbuild'
   },
   
   optimizeDeps: {
