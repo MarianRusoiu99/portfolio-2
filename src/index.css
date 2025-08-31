@@ -23,6 +23,23 @@
   transition: none !important;
 }
 
+/* Interactive Text Word Wrapping */
+.interactive-text-container {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+
+.interactive-text-word {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 0.25rem;
+}
+
+.interactive-text-word:last-child {
+  margin-right: 0;
+}
+
 
 :root {
   /* Light theme variables */

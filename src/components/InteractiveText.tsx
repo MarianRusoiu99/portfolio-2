@@ -99,12 +99,12 @@ export interface InteractiveTextRef {
   reset: () => void;
 }
 
-const InteractiveText = forwardRef<InteractiveTextRef, InteractiveTextProps>(
-  ({ text, className = '' }, ref) => {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-    const [letterStyles, setLetterStyles] = useState<{ [key: number]: { font: string; color: string } }>({});
+const InteractiveText = forwardRef<any, InteractiveTextProps>(
+  ({ text, className }, ref) => {
+    const [hoveredIndex, setHoveredIndex] = useState<string | null>(null);
+    const [letterStyles, setLetterStyles] = useState<{[key: string]: {font: string, color: string}}>({});
 
-    const handleLetterHover = (index: number) => {
+    const handleLetterHover = (index: string) => {
       // Always generate new random styles on hover
       const randomFont = creativeFonts[Math.floor(Math.random() * creativeFonts.length)];
       const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
@@ -131,35 +131,39 @@ const InteractiveText = forwardRef<InteractiveTextRef, InteractiveTextProps>(
     }));
  
     return (
-      <span className={className}>
-        {text.split('').map((char, index) => (
-          <motion.span
-            key={index}
-            className="creative-fonts inline-block no-spawn"
-            style={{
-              fontFamily: letterStyles[index] 
-                ? letterStyles[index].font 
-                : 'Oswald',
-              color: letterStyles[index] 
-                ? letterStyles[index].color 
-                : 'inherit',
-              fontWeight: letterStyles[index] ? '700' : 'inherit',
-              verticalAlign: 'baseline',
-              lineHeight: '1'
-            }}
-            onMouseEnter={() => handleLetterHover(index)}
-            onMouseLeave={handleLetterLeave}
-            whileHover={{ 
-              scale: 1.1,
-              y: -2,
-              transition: { type: 'spring', stiffness: 400, damping: 10 }
-            }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.02 }}
-          >
-            {char === ' ' ? '\u00A0' : char}
-          </motion.span>
+      <span className={`${className} interactive-text-container`}>
+        {text.split(' ').map((word, wordIndex) => (
+          <span key={wordIndex} className="interactive-text-word">
+            {word.split('').map((char, charIndex) => (
+              <motion.span
+                key={`${wordIndex}-${charIndex}`}
+                className="creative-fonts inline-block no-spawn"
+                style={{
+                  fontFamily: letterStyles[`${wordIndex}-${charIndex}`] 
+                    ? letterStyles[`${wordIndex}-${charIndex}`].font 
+                    : 'Oswald',
+                  color: letterStyles[`${wordIndex}-${charIndex}`] 
+                    ? letterStyles[`${wordIndex}-${charIndex}`].color 
+                    : 'inherit',
+                  fontWeight: letterStyles[`${wordIndex}-${charIndex}`] ? '700' : 'inherit',
+                  verticalAlign: 'baseline',
+                  lineHeight: '1'
+                }}
+                onMouseEnter={() => handleLetterHover(`${wordIndex}-${charIndex}`)}
+                onMouseLeave={handleLetterLeave}
+                whileHover={{ 
+                  scale: 1.1,
+                  y: -2,
+                  transition: { type: 'spring', stiffness: 400, damping: 10 }
+                }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: (wordIndex * word.length + charIndex) * 0.02 }}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </span>
         ))}
       </span>
     );
