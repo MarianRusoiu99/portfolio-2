@@ -28,7 +28,7 @@ const ImageSpawner: React.FC<ImageSpawnerProps> = ({ images }) => {
             left: image.x,
             top: image.y,
             width: image.width,
-            height: image.height,
+            height: 'auto',
             transform: `rotate(${image.rotation}deg)`,
             zIndex: 10,
           }}

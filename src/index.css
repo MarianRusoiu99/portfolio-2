@@ -1,14 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Righteous&family=Bungee&family=Kalam:wght@700&family=Bangers&family=Creepster&family=Freckle+Face&family=Griffy&family=Lacquer&family=Orbitron:wght@900&family=Permanent+Marker&family=Russo+One&family=Shrikhand&family=Titan One&family=Abril+Fatface&family=Alfa+Slab+One&family=Anton&family=Black+Ops+One&family=Bowlby+One&family=Bungee+Shade&family=Fredericka+the+Great&family=Goblin+One&family=Henny+Penny&family=Kavoon&family=Luckiest+Guy&family=Modak&family=Nosifer&family=Pirata+One&family=Rammetto+One&family=Rubik+Bubbles&family=Rubik+Glitch&family=Sancreek&family=Special+Elite&family=Squada+One&family=Stalinist+One&family=Ultra&family=Unlock&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Righteous&family=Bungee&family=Kalam:wght@700&family=Bangers&family=Creepster&family=Freckle+Face&family=Griffy&family=Lacquer&family=Orbitron:wght@900&family=Permanent+Marker&family=Russo+One&family=Shrikhand&family=Titan+One&family=Abril+Fatface&family=Alfa+Slab+One&family=Anton&family=Black+Ops+One&family=Bowlby+One&family=Bungee+Shade&family=Fredericka+the+Great&family=Goblin+One&family=Henny+Penny&family=Kavoon&family=Luckiest+Guy&family=Modak&family=Nosifer&family=Pirata+One&family=Rammetto+One&family=Rubik+Bubbles&family=Rubik+Glitch&family=Sancreek&family=Special+Elite&family=Squada+One&family=Stalinist+One&family=Ultra&family=Unlock&family=Yeseva+One&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* {
-  cursor: none !important;
+/* Ensure fixed and sticky positioning always works */
+.fixed {
+  position: fixed !important;
+  z-index: 50;
 }
+
+.sticky {
+  position: sticky !important;
+  z-index: 50;
+}
+
+/* Prevent global transform/transition from breaking fixed/sticky elements */
+.fixed, .sticky {
+  transform: none !important;
+  transition: none !important;
+}
+
 
 :root {
   /* Light theme variables */
@@ -66,7 +80,6 @@
 body {
   font-family: var(--font-primary);
   overflow-x: hidden;
-  cursor: none !important;
   background-color: var(--color-background);
   color: var(--color-text);
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
@@ -85,7 +98,6 @@ body {
 .spawned-image {
   box-shadow: var(--shadow-lg);
   transition: all 0.5s ease;
-  cursor: none !important;
   border-radius: var(--border-radius-lg);
   filter: brightness(0.95) contrast(1.05) saturate(1.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -103,9 +115,6 @@ body {
   pointer-events: auto;
 }
 
-button, a, input, textarea, select {
-  cursor: none !important;
-}
 
 /* Smooth scrolling */
 html {
