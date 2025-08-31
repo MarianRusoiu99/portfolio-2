@@ -3,6 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&display=swap" as="style">
+    
+    <!-- DNS prefetch for performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
     <title>Valentin Rusoiu - Frontend Developer for Creative Projects</title>
     <meta name="description" content="Creative frontend developer building fast, modern, and expressive digital products. Specializing in React, Next.js, AI-powered tools, and self-hosted infrastructure.">
     <meta property="og:title" content="Valentin Rusoiu - Frontend Developer for Creative Projects">
@@ -10,6 +19,7 @@
     <meta property="og:image:alt" content="Portfolio preview of Valentin Rusoiu">
     <meta name="twitter:title" content="Valentin Rusoiu - Frontend Developer for Creative Projects">
     <meta name="twitter:description" content="Creative frontend developer building fast, modern, and expressive digital products. Specializing in React, Next.js, AI-powered tools, and self-hosted infrastructure.">
+    
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -20,8 +30,41 @@
         "sameAs": []
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-BGjCGX0r.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CdrE-0Vs.css">
+    
+    <!-- Load decorative fonts asynchronously after page load -->
+    <script>
+      // Service worker registration
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('SW registered: ', registration);
+            })
+            .catch(function(registrationError) {
+              console.log('SW registration failed: ', registrationError);
+            });
+          
+          // Load decorative fonts after service worker
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = '/src/decorative-fonts.css';
+          document.head.appendChild(link);
+        });
+      } else {
+        // Fallback for browsers without service worker support
+        window.addEventListener('load', function() {
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = '/src/decorative-fonts.css';
+          document.head.appendChild(link);
+        });
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-n7BiXrC6.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-gH-7aFTg.js">
+    <link rel="modulepreload" crossorigin href="/assets/framerMotion-D9MPxJ2_.js">
+    <link rel="modulepreload" crossorigin href="/assets/router-bmZEt6YG.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-vMSvh1Gx.css">
   </head>
   <body>
     <div id="root"></div>
