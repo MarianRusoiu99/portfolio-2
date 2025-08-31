@@ -113,6 +113,7 @@ export const projectsData: Record<string, ProjectData> = {
     image: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&h=600&fit=crop',
     type: 'AI Product',
     status: 'Live',
+    website: 'https://peerconcept.com/projects/my-kids-tales',
     date: '2024',
     tech: ['React', 'Nest.js', 'OpenAI API', 'DALL·E', 'PlayHT', 'TypeScript'],
     images: [
