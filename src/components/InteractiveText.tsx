@@ -45,7 +45,7 @@ const creativeFonts = [
   'Ultra',
   'Unlock',
   'Yeseva One'
-];
+]; 
 
 const vibrantColors = [
   '#FF6B6B',
