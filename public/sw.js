@@ -2,9 +2,7 @@
 const CACHE_NAME = 'portfolio-v1';
 const urlsToCache = [
   '/',
-  '/src/main.tsx',
-  '/src/index.css',
-  // Add other critical resources
+  // Add other critical resources (e.g., '/favicon.ico', '/manifest.json', or built asset paths)
 ];
 
 self.addEventListener('install', (event) => {
