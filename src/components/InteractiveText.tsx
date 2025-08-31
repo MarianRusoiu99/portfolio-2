@@ -129,7 +129,7 @@ const InteractiveText = forwardRef<InteractiveTextRef, InteractiveTextProps>(
     useImperativeHandle(ref, () => ({
       reset
     }));
-
+ 
     return (
       <span className={className}>
         {text.split('').map((char, index) => (
