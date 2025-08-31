@@ -35,7 +35,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ y, interactiveTextRefs }) => 
           <span>Available for projects</span>
         </motion.div>
       </motion.div>
-      <motion.div className="absolute bottom-8 left-1/2 transform -translate-x-1/2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1, duration: 0.6 }}>
+      <motion.div className="absolute bottom-12 left-1/2 transform -translate-x-1/2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1, duration: 0.6 }}>
         <div className="w-px h-20 relative" style={{ backgroundColor: theme.colors.border }}>
           <motion.div className="w-px h-4 absolute top-0" style={{ backgroundColor: theme.colors.text }} animate={{ y: [0, 60, 0] }} transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }} />
         </div>
