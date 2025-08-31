@@ -10,41 +10,13 @@ const creativeFonts = [
   'Fredoka One',
   'Righteous',
   'Bungee',
-  'Kalam',
   'Bangers',
-  'Creepster',
-  'Freckle Face',
-  'Griffy',
-  'Lacquer',
   'Orbitron',
   'Permanent Marker',
   'Russo One',
-  'Shrikhand',
-  'Titan One',
-  'Abril Fatface',
-  'Alfa Slab One',
   'Anton',
-  'Black Ops One',
-  'Bowlby One',
-  'Bungee Shade',
-  'Fredericka the Great',
-  'Goblin One',
-  'Henny Penny',
-  'Kavoon',
   'Luckiest Guy',
-  'Modak',
-  'Nosifer',
-  'Pirata One',
-  'Rammetto One',
-  'Rubik Bubbles',
-  'Rubik Glitch',
-  'Sancreek',
-  'Special Elite',
-  'Squada One',
-  'Stalinist One',
-  'Ultra',
-  'Unlock',
-  'Yeseva One'
+  'Creepster'
 ];
 
 const vibrantColors = [
@@ -101,32 +73,34 @@ export interface InteractiveTextRef {
 
 const InteractiveText = React.memo(forwardRef<InteractiveTextRef, InteractiveTextProps>(
   ({ text, className = '' }, ref) => {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const [letterStyles, setLetterStyles] = useState<{ [key: number]: { font: string; color: string } }>({});
+    const [fontIndex, setFontIndex] = useState(0);
 
     // Memoize split text to avoid unnecessary recalculations
     const splitText = useMemo(() => text.split(''), [text]);
 
     const handleLetterHover = useCallback((index: number) => {
-      // Always generate new random styles on hover
-      const randomFont = creativeFonts[Math.floor(Math.random() * creativeFonts.length)];
+      // Cycle through fonts sequentially and pick a random color
+      const currentFont = creativeFonts[fontIndex % creativeFonts.length];
       const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
       
       setLetterStyles(prev => ({
         ...prev,
-        [index]: { font: randomFont, color: randomColor }
+        [index]: { font: currentFont, color: randomColor }
       }));
       
-      setHoveredIndex(index);
-    }, []);
+      // Increment font index for next hover
+      setFontIndex(prev => prev + 1);
+    }, [fontIndex]);
 
     const handleLetterLeave = useCallback(() => {
-      setHoveredIndex(null);
+      // Do nothing - keep the font changes persistent
+      // Only reset manually via the reset function
     }, []);
 
     const reset = useCallback(() => {
       setLetterStyles({});
-      setHoveredIndex(null);
+      setFontIndex(0);
     }, []);
 
     useImperativeHandle(ref, () => ({

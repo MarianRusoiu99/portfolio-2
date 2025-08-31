@@ -1,2 +1,16 @@
 /* Decorative fonts loaded asynchronously for better performance */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Righteous&family=Bungee&family=Kalam:wght@700&family=Bangers&family=Creepster&family=Freckle+Face&family=Griffy&family=Lacquer&family=Orbitron:wght@900&family=Permanent+Marker&family=Russo+One&family=Shrikhand&family=Titan+One&family=Abril+Fatface&family=Alfa+Slab+One&family=Anton&family=Black+Ops+One&family=Bowlby+One&family=Bungee+Shade&family=Fredericka+the+Great&family=Goblin+One&family=Henny+Penny&family=Kavoon&family=Luckiest+Guy&family=Modak&family=Nosifer&family=Pirata+One&family=Rammetto+One&family=Rubik+Bubbles&family=Rubik+Glitch&family=Sancreek&family=Special+Elite&family=Squada+One&family=Stalinist+One&family=Ultra&family=Unlock&family=Yeseva+One&display=swap');
+@import url('/fonts/Fredoka-One/Fredoka-One.css');
+@import url('/fonts/Righteous/Righteous.css');
+@import url('/fonts/Bungee/Bungee.css');
+@import url('/fonts/Bangers/Bangers.css');
+@import url('/fonts/Orbitron/Orbitron.css');
+@import url('/fonts/Russo-One/Russo-One.css');
+@import url('/fonts/Anton/Anton.css');
+@import url('/fonts/Luckiest-Guy/Luckiest-Guy.css');
+@import url('/fonts/Creepster/Creepster.css');
+@import url('/fonts/Permanent-Marker/Permanent-Marker.css');
+
+/* Ensure proper font display */
+.creative-fonts {
+  font-display: swap;
+}

@@ -1,0 +1,34 @@
+/* Local fonts for better performance */
+
+/* Essential fonts */
+@import url('/fonts/Inter/Inter.css');
+@import url('/fonts/Oswald/Oswald.css');
+
+/* Creative fonts loaded asynchronously */
+@import url('/fonts/Fredoka-One/Fredoka-One.css');
+@import url('/fonts/Righteous/Righteous.css');
+@import url('/fonts/Bungee/Bungee.css');
+@import url('/fonts/Bangers/Bangers.css');
+@import url('/fonts/Orbitron/Orbitron.css');
+@import url('/fonts/Russo-One/Russo-One.css');
+@import url('/fonts/Anton/Anton.css');
+@import url('/fonts/Luckiest-Guy/Luckiest-Guy.css');
+@import url('/fonts/Creepster/Creepster.css');
+@import url('/fonts/Permanent-Marker/Permanent-Marker.css');
+
+/* Font face declarations for creative fonts */
+.creative-fonts {
+  font-display: swap;
+}
+
+/* Fallback font declarations */
+.font-fredoka { font-family: 'Fredoka One', cursive; }
+.font-righteous { font-family: 'Righteous', cursive; }
+.font-bungee { font-family: 'Bungee', cursive; }
+.font-bangers { font-family: 'Bangers', cursive; }
+.font-orbitron { font-family: 'Orbitron', monospace; }
+.font-russo { font-family: 'Russo One', sans-serif; }
+.font-anton { font-family: 'Anton', sans-serif; }
+.font-luckiest { font-family: 'Luckiest Guy', cursive; }
+.font-creepster { font-family: 'Creepster', cursive; }
+.font-permanent { font-family: 'Permanent Marker', cursive; }
