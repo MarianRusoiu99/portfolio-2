@@ -22,9 +22,9 @@ function App() {
 
   return (
     <ThemeProvider>
-      <AnimatePresence mode="wait">
+      {/* <AnimatePresence mode="wait">
         {loading && <Preloader />}
-      </AnimatePresence>
+      </AnimatePresence> */}
       
       <Router>
         <ScrollToTop />

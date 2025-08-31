@@ -303,7 +303,7 @@ const ProjectPage: React.FC = () => {
                   <ExternalLink size={16} />
                 </motion.a>
                 
-                <motion.button
+                {/* <motion.button
                   className="px-8 py-3 rounded-full font-medium transition-colors flex items-center gap-2 justify-center no-spawn"
                   style={{
                     border: `2px solid ${theme.colors.border}`,
@@ -314,7 +314,7 @@ const ProjectPage: React.FC = () => {
                 >
                   <span>View More Projects</span>
                   <Github size={16} />
-                </motion.button>
+                </motion.button> */}
               </div>
             </motion.div>
           </div>
