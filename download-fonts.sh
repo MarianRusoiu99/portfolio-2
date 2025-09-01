@@ -13,7 +13,27 @@ grep -oP 'url\(\K[^)]*' temp_inter.css | sed 's/['"'"'"]//g' | while read -r url
     filename=$(basename "$url")
     curl -s -o "public/fonts/Inter/$filename" "$url"
 done
-sed 's|https://fonts.gstatic.com/s/inter/[^/]*/[^/]*/|./|g' temp_inter.css > public/fonts/Inter/Inter.css
+# Fix the URL replacement to properly handle the paths
+sed 's|url(https://fonts.gstatic.com/[^)]*|url(./'"'"'$(basename "$url")'"'"')|g' temp_inter.css | \
+sed 's|) format|) format|g' > temp_fixed.css
+# Properly replace each URL with its local filename
+python3 -c "
+import re
+import os
+
+with open('temp_inter.css', 'r') as f:
+    content = f.read()
+
+# Extract all URLs and their filenames
+urls = re.findall(r'url\(([^)]+)\)', content)
+for url in urls:
+    clean_url = url.strip('\"\'')
+    filename = os.path.basename(clean_url)
+    content = content.replace(url, f'./{filename}')
+
+with open('public/fonts/Inter/Inter.css', 'w') as f:
+    f.write(content)
+"
 rm temp_inter.css
 echo "✓ Inter downloaded"
 

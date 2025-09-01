@@ -1,50 +1,24 @@
 import React, { useState, useImperativeHandle, forwardRef } from 'react';
 import { motion } from 'framer-motion';
+import '../decorative-fonts.css'; // Import decorative fonts
 
 interface InteractiveTextProps {
   text: string;
   className?: string;
 }
 
+// Only include fonts that we actually have locally
 const creativeFonts = [
-  'Fredoka One',
-  'Righteous',
+  'Anton',
+  'Bangers', 
   'Bungee',
-  'Kalam',
-  'Bangers',
   'Creepster',
-  'Freckle Face',
-  'Griffy',
-  'Lacquer',
+  'Fredoka One',
+  'Luckiest Guy',
   'Orbitron',
   'Permanent Marker',
-  'Russo One',
-  'Shrikhand',
-  'Titan One',
-  'Abril Fatface',
-  'Alfa Slab One',
-  'Anton',
-  'Black Ops One',
-  'Bowlby One',
-  'Bungee Shade',
-  'Fredericka the Great',
-  'Goblin One',
-  'Henny Penny',
-  'Kavoon',
-  'Luckiest Guy',
-  'Modak',
-  'Nosifer',
-  'Pirata One',
-  'Rammetto One',
-  'Rubik Bubbles',
-  'Rubik Glitch',
-  'Sancreek',
-  'Special Elite',
-  'Squada One',
-  'Stalinist One',
-  'Ultra',
-  'Unlock',
-  'Yeseva One'
+  'Righteous',
+  'Russo One'
 ]; 
 
 const vibrantColors = [
@@ -99,9 +73,8 @@ export interface InteractiveTextRef {
   reset: () => void;
 }
 
-const InteractiveText = forwardRef<any, InteractiveTextProps>(
+const InteractiveText = forwardRef<InteractiveTextRef, InteractiveTextProps>(
   ({ text, className }, ref) => {
-    const [hoveredIndex, setHoveredIndex] = useState<string | null>(null);
     const [letterStyles, setLetterStyles] = useState<{[key: string]: {font: string, color: string}}>({});
 
     const handleLetterHover = (index: string) => {
@@ -113,17 +86,14 @@ const InteractiveText = forwardRef<any, InteractiveTextProps>(
         ...prev,
         [index]: { font: randomFont, color: randomColor }
       }));
-      
-      setHoveredIndex(index);
     };
 
     const handleLetterLeave = () => {
-      setHoveredIndex(null);
+      // Keep the styles persistent - don't reset on mouse leave
     };
 
     const reset = () => {
       setLetterStyles({});
-      setHoveredIndex(null);
     };
 
     useImperativeHandle(ref, () => ({
@@ -140,8 +110,8 @@ const InteractiveText = forwardRef<any, InteractiveTextProps>(
                 className="creative-fonts inline-block no-spawn"
                 style={{
                   fontFamily: letterStyles[`${wordIndex}-${charIndex}`] 
-                    ? letterStyles[`${wordIndex}-${charIndex}`].font 
-                    : 'Oswald',
+                    ? `"${letterStyles[`${wordIndex}-${charIndex}`].font}", "Oswald", sans-serif`
+                    : '"Oswald", sans-serif',
                   color: letterStyles[`${wordIndex}-${charIndex}`] 
                     ? letterStyles[`${wordIndex}-${charIndex}`].color 
                     : 'inherit',
