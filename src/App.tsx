@@ -1,24 +1,15 @@
-import { useState, useEffect, Suspense, lazy } from 'react';
+import {  Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
-import { AnimatePresence } from 'framer-motion';
-import Preloader from './components/Preloader';
-import ProjectPage from './pages/ProjectPage';
+// import { AnimatePresence } from 'framer-motion';
+// import Preloader from './components/Preloader';
 import ScrollToTop from './components/ScrollToTop';
 
+// Lazy load all pages for better initial bundle size
 const HomePage = lazy(() => import('./pages/HomePage'));
+const ProjectPage = lazy(() => import('./pages/ProjectPage'));
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // This ensures the preloader is shown for a minimum amount of time for a smooth experience.
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000); // Minimum 2 seconds loading screen
-
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <ThemeProvider>
