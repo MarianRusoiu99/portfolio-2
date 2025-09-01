@@ -1,11 +1,12 @@
 import { useState, useCallback } from 'react';
 import { SpawnedImage } from '../components/ImageSpawner';
 import { unsplashImages } from '../data';
+import { imagePreloader } from '../utils/imagePreloader';
 
 export const useImageSpawner = () => {
   const [spawnedImages, setSpawnedImages] = useState<SpawnedImage[]>([]);
 
-  const spawnImage = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
+  const spawnImage = useCallback(async (event: React.MouseEvent<HTMLDivElement>) => {
     const target = event.target as HTMLElement;
     
     let currentElement: HTMLElement | null = target;
@@ -24,6 +25,15 @@ export const useImageSpawner = () => {
     const y = event.clientY - rect.top;
     
     const randomImage = unsplashImages[Math.floor(Math.random() * unsplashImages.length)];
+    
+    // Preload image before spawning
+    try {
+      await imagePreloader.preloadImage(randomImage);
+    } catch (error) {
+      console.warn('Image preload failed:', error);
+      // Continue with spawning even if preload fails
+    }
+    
     const randomWidth = Math.random() * 150 + 100;
     const randomHeight = Math.random() * 100 + 80;
     const randomRotation = (Math.random() - 0.5) * 20;

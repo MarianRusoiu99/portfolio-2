@@ -6,5 +6,29 @@ export default defineConfig({
   
   optimizeDeps: {
     exclude: ['lucide-react'],
+    include: ['react', 'react-dom', 'framer-motion']
   },
+  
+  build: {
+    target: 'es2020',
+    minify: 'esbuild',
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          motion: ['framer-motion'],
+          router: ['react-router-dom'],
+          icons: ['lucide-react']
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000
+  },
+  
+  server: {
+    hmr: {
+      overlay: false
+    }
+  }
 });

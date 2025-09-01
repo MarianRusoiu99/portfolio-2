@@ -1,12 +1,9 @@
-/* Local font imports - no external requests */
-@import url('/fonts/Inter/Inter.css');
-@import url('/fonts/Oswald/Oswald.css');
-
+/* Critical styles first */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Ensure fixed and sticky positioning always works */
+/* Critical layout styles */
 .fixed {
   position: fixed !important;
   z-index: 50;

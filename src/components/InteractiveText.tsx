@@ -1,25 +1,11 @@
 import React, { useState, useImperativeHandle, forwardRef } from 'react';
 import { motion } from 'framer-motion';
-import '../decorative-fonts.css'; // Import decorative fonts
+import { fontLoader } from '../utils/fontLoader';
 
 interface InteractiveTextProps {
   text: string;
   className?: string;
 }
-
-// Only include fonts that we actually have locally
-const creativeFonts = [
-  'Anton',
-  'Bangers', 
-  'Bungee',
-  'Creepster',
-  'Fredoka One',
-  'Luckiest Guy',
-  'Orbitron',
-  'Permanent Marker',
-  'Righteous',
-  'Russo One'
-]; 
 
 const vibrantColors = [
   '#FF6B6B',
@@ -77,15 +63,28 @@ const InteractiveText = forwardRef<InteractiveTextRef, InteractiveTextProps>(
   ({ text, className }, ref) => {
     const [letterStyles, setLetterStyles] = useState<{[key: string]: {font: string, color: string}}>({});
 
-    const handleLetterHover = (index: string) => {
-      // Always generate new random styles on hover
-      const randomFont = creativeFonts[Math.floor(Math.random() * creativeFonts.length)];
+    const handleLetterHover = async (index: string) => {
+      // Get available fonts from fontLoader
+      const availableFonts = fontLoader.getAvailableFonts();
+      const randomFont = availableFonts[Math.floor(Math.random() * availableFonts.length)];
       const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
       
-      setLetterStyles(prev => ({
-        ...prev,
-        [index]: { font: randomFont, color: randomColor }
-      }));
+      // Load font lazily when needed
+      try {
+        await fontLoader.loadFont(randomFont);
+        
+        setLetterStyles(prev => ({
+          ...prev,
+          [index]: { font: randomFont, color: randomColor }
+        }));
+      } catch (error) {
+        console.warn('Font loading failed, using fallback', error);
+        // Apply color change even if font fails
+        setLetterStyles(prev => ({
+          ...prev,
+          [index]: { font: 'Oswald', color: randomColor }
+        }));
+      }
     };
 
     const handleLetterLeave = () => {

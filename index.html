@@ -7,6 +7,19 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
+    
+    <!-- Critical resource hints -->
+    <link rel="preconnect" href="/fonts" crossorigin>
+    <link rel="dns-prefetch" href="/fonts">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="/fonts/Inter/Inter.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/fonts/Oswald/Oswald.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="/fonts/Inter/Inter.css">
+      <link rel="stylesheet" href="/fonts/Oswald/Oswald.css">
+    </noscript>
+    
     <title>Valentin Rusoiu - Frontend Developer for Creative Projects</title>
     <meta name="description" content="Creative frontend developer building fast, modern, and expressive digital products. Specializing in React, Next.js, AI-powered tools, and self-hosted infrastructure.">
     <meta property="og:title" content="Valentin Rusoiu - Frontend Developer for Creative Projects">
