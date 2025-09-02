@@ -83,7 +83,7 @@ const ProjectHero: React.FC<ProjectHeroProps> = ({ project }) => {
                     <span 
                       key={index}
                       className="text-sm px-3 py-1 rounded-md"
-                      style={{ border: `1px solid ${theme.colors.border}`, color: theme.colors.textSecondary }}
+                      style={{ color: theme.colors.textSecondary }}
                     >
                       {tech}
                     </span>
@@ -120,9 +120,8 @@ const ProjectHero: React.FC<ProjectHeroProps> = ({ project }) => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border transition-colors no-spawn"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg transition-colors no-spawn"
                       style={{ 
-                        border: `1px solid ${theme.colors.border}`, 
                         color: theme.colors.text,
                         backgroundColor: 'transparent' 
                       }}

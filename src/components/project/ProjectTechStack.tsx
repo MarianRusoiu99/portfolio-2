@@ -48,8 +48,7 @@ const ProjectTechStack: React.FC<ProjectTechStackProps> = ({ project }) => {
               whileHover={{ scale: 1.05 }}
               className="p-4 rounded-xl text-center transition-all duration-300"
               style={{ 
-                backgroundColor: theme.colors.background,
-                border: `1px solid ${theme.colors.border}` 
+                backgroundColor: theme.colors.background
               }}
             >
               <span 

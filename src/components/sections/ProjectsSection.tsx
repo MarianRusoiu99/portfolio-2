@@ -26,7 +26,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ interactiveTextRefs }
         </motion.div>
         <div className="space-y-6 sm:space-y-8">
           {Object.entries(projectsData).map(([projectId, project]) => (
-            <motion.div key={projectId} className="group rounded-2xl p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300" style={{ border: `1px solid ${theme.colors.border}`, backgroundColor: theme.colors.background }} initial={{ opacity: 0.8, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true }} >
+            <motion.div key={projectId} className="group rounded-2xl p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300" style={{ backgroundColor: theme.colors.background }} initial={{ opacity: 0.8, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true }} >
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                 <div className="flex-1">
                   {/* Title on its own row for mobile */}
@@ -75,7 +75,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ interactiveTextRefs }
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, techIndex) => (
-                      <span key={techIndex} className="text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-md" style={{ border: `1px solid ${theme.colors.border}`, color: theme.colors.textSecondary }}>
+                      <span key={techIndex} className="text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-md" style={{ backgroundColor: theme.colors.text, color: theme.colors.background }}>
                         {tech}
                       </span>
                     ))}
@@ -84,8 +84,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ interactiveTextRefs }
                 <div className="lg:ml-6 flex-shrink-0">
                   <Link to={`/project/${projectId}`} className="no-spawn">
                     <motion.div
-                      className="inline-flex items-center gap-2 transition-colors border rounded-lg px-3 py-2 w-full sm:w-auto justify-center sm:justify-start"
-                      style={{ color: theme.colors.textSecondary, borderColor: theme.colors.border }}
+                      className="inline-flex items-center gap-2 transition-colors rounded-lg px-3 py-2 w-full sm:w-auto justify-center sm:justify-start"
+                      style={{ color: theme.colors.textSecondary }}
                       whileHover={{ x: 5 }}
                     >
                       <span className="text-sm">View Project</span>
