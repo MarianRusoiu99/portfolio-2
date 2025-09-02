@@ -26,7 +26,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ interactiveTextRefs }
         </motion.div>
         <div className="space-y-6 sm:space-y-8">
           {Object.entries(projectsData).map(([projectId, project]) => (
-            <motion.div key={projectId} className="group rounded-2xl p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300" style={{ border: `1px solid ${theme.colors.border}`, backgroundColor: theme.colors.background }} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true }} >
+            <motion.div key={projectId} className="group rounded-2xl p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300" style={{ border: `1px solid ${theme.colors.border}`, backgroundColor: theme.colors.background }} initial={{ opacity: 0.8, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true }} >
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                 <div className="flex-1">
                   {/* Title on its own row for mobile */}

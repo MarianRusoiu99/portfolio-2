@@ -19,7 +19,7 @@ function App() {
       
       <Router>
         <ScrollToTop />
-        <Suspense fallback={null}>
+        <Suspense fallback={null}>nly when you 
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/project/:projectId" element={<ProjectPage />} />
