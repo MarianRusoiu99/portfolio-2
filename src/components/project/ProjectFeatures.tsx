@@ -48,8 +48,7 @@ const ProjectFeatures: React.FC<ProjectFeaturesProps> = ({ project }) => {
               viewport={{ once: true }}
               className="flex items-start gap-4 p-6 rounded-xl"
               style={{ 
-                backgroundColor: theme.colors.surface,
-                border: `1px solid ${theme.colors.border}` 
+                backgroundColor: theme.colors.surface
               }}
             >
               <div 

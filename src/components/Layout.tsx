@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { ArrowLeft, Download, Mail } from 'lucide-react';
+import { ArrowLeft, Mail } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import InteractiveText from './InteractiveText';
 import ThemeToggle from './ThemeToggle';
@@ -13,7 +13,6 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, showBackButton = false }) => {
   const { theme } = useTheme();
-  const location = useLocation();
   const navRef = useRef<HTMLElement>(null);
 
   return (

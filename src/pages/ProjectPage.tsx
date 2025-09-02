@@ -252,17 +252,18 @@ const ProjectPage: React.FC = () => {
                 {project.impact.map((result, index) => (
                   <motion.div
                     key={index}
-                    className="p-6 rounded-xl text-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+                    className="p-6 rounded-xl text-center"
+                    style={{ backgroundColor: theme.colors.surface }}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     viewport={{ once: true }}
                     whileHover={{ y: -5 }}
                   >
-                    <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
+                    <h3 className="text-xl font-bold mb-2" style={{ color: theme.colors.text }}>
                       {result.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <p style={{ color: theme.colors.textSecondary }}>
                       {result.description}
                     </p>
                   </motion.div>

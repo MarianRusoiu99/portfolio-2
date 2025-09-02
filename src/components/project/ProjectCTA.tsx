@@ -44,9 +44,8 @@ const ProjectCTA: React.FC = () => {
             
             <Link 
               to="/"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border transition-colors no-spawn"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg transition-colors no-spawn"
               style={{ 
-                border: `1px solid ${theme.colors.border}`, 
                 color: theme.colors.text,
                 backgroundColor: 'transparent' 
               }}

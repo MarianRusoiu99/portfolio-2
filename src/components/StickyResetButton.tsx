@@ -34,11 +34,10 @@ const StickyResetButton: React.FC<StickyResetButtonProps> = ({
         transition={{ type: 'spring', stiffness: 300, damping: 30, delay: 0.2 }}
       >
         <div
-          className="px-4 py-3 rounded-lg shadow-lg backdrop-blur-sm border text-sm"
+          className="px-4 py-3 rounded-lg shadow-lg backdrop-blur-sm text-sm"
           style={{
             backgroundColor: `${theme.colors.background}95`,
-            color: theme.colors.text,
-            border: `1px solid ${theme.colors.border}`,
+            color: theme.colors.text
           }}
         >
           <p className="font-medium mb-1">🐾 Meet Mitsubishi!</p>
