@@ -50,14 +50,14 @@ const Layout: React.FC<LayoutProps> = ({ children, showBackButton = false }) => 
               </Link>
             )}
             {!showBackButton && (
-              <InteractiveText text="Valentin Rusoiu" />
+              <InteractiveText text="Valentin Anicza" />
             )}
           </motion.div>
           
           <div className="flex items-center gap-6">
             <ThemeToggle />
             <motion.a 
-              href="mailto:contact@valentinrusoiu.dev"
+              href="mailto:contact@valentinanicza.click"
               className="text-sm transition-colors flex items-center gap-2 no-spawn"
               style={{ color: theme.colors.textSecondary }}
               whileHover={{ x: 5 }}

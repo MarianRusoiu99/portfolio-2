@@ -23,7 +23,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ interactiveTextRefs }) => {
           </div>
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} viewport={{ once: true }}>
             <p className="text-lg md:text-xl leading-relaxed mb-4 md:mb-6 lg:mb-8" style={{ color: theme.colors.textSecondary }}>
-              I'm Valentin Rusoiu, a creative developer focused on building reliable, high-performance web apps. My experience spans WordPress, Next.js, React Native, and AI-driven tools. I also design self-hosted infrastructure with Docker, GitHub Actions, and monitoring stacks to keep projects scalable and resilient.
+              I'm Valentin Anicza, a creative developer focused on building reliable, high-performance web apps. My experience spans WordPress, Next.js, React Native, and AI-driven tools. I also design self-hosted infrastructure with Docker, GitHub Actions, and monitoring stacks to keep projects scalable and resilient.
             </p>
             <div className="flex flex-wrap gap-3 mb-4 md:mb-6 lg:mb-8">
               {personalTraits.map((trait, index) => (
@@ -32,7 +32,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ interactiveTextRefs }) => {
                 </motion.span>
               ))}
             </div>
-            <motion.a href="mailto:contact@valentinrusoiu.dev" className="group flex items-center gap-3 text-lg font-medium transition-colors no-spawn" style={{ color: theme.colors.text }} whileHover={{ x: 10 }}>
+            <motion.a href="mailto:contact@valentinanicza.click" className="group flex items-center gap-3 text-lg font-medium transition-colors no-spawn" style={{ color: theme.colors.text }} whileHover={{ x: 10 }}>
               <span>Let's work together</span>
               <ArrowUpRight className="group-hover:rotate-45 transition-transform" size={20} />
             </motion.a>
