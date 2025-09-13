@@ -291,7 +291,7 @@ const ProjectPage: React.FC = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.a
-                  href="mailto:contact@valentinrusoiu.dev"
+                  href="mailto:contact@valentinanicza.click"
                   className="px-8 py-3 rounded-full font-medium transition-colors flex items-center gap-2 justify-center no-spawn"
                   style={{
                     backgroundColor: theme.colors.primary,

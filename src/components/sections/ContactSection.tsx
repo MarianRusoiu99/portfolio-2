@@ -22,9 +22,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({ interactiveTextRefs }) 
           <InteractiveText text="Let's collaborate on your next project." className="block" ref={(el) => { interactiveTextRefs.current[12] = el; }} />
         </motion.div>
         <motion.div className="flex flex-col sm:flex-row gap-6 justify-center items-center" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }} viewport={{ once: true }}>
-          <motion.a href="mailto:contact@valentinrusoiu.dev" className="px-8 py-4 rounded-full font-medium transition-colors flex items-center gap-3 no-spawn" style={{ backgroundColor: theme.colors.background, color: theme.colors.text }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <motion.a href="mailto:contact@valentinanicza.click" className="px-8 py-4 rounded-full font-medium transition-colors flex items-center gap-3 no-spawn" style={{ backgroundColor: theme.colors.background, color: theme.colors.text }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Mail size={20} />
-            <span>contact@valentinrusoiu.dev</span>
+            <span>contact@valentinanicza.click</span>
           </motion.a>
         </motion.div>
       </div>
