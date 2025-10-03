@@ -19,7 +19,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ y, interactiveTextRefs }) => 
       >
         <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="mb-8">
           <h1 className="text-6xl md:text-9xl lg:text-[12rem] font-bold leading-none tracking-tight">
-            <InteractiveText text="Frontend" className="block" ref={(el) => { interactiveTextRefs.current[0] = el; }} />
+            <InteractiveText text="Fullstack" className="block" ref={(el) => { interactiveTextRefs.current[0] = el; }} />
             <InteractiveText text="Developer" className="block" ref={(el) => { interactiveTextRefs.current[1] = el; }} />
           </h1>
         </motion.div>
